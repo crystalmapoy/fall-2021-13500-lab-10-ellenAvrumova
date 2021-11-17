@@ -6,13 +6,20 @@ int main() {
     now.h = 17;
     now.m = 45;
     Time t = { 17, 45 };
-    
+
     Time morningLecture = {8, 10};
     Time myAlarm;
     myAlarm = morningLecture;
     printTime(morningLecture);
     std::cout << std::endl;
     printTime(myAlarm);
+    std::cout << std::endl;
+
+    Time a = {10, 30};
+    Time b = {13, 40};
+    std::cout << minutesUntil(a, b) << std::endl;
+
+    
 
     return 0;
 }
