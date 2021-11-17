@@ -1,5 +1,7 @@
 #include <iostream>
 #include "time.h"
+#include "movie.h"
+#include "timeslot.h"
 
 int main() {
     Time now;

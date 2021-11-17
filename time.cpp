@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath> 
 #include "time.h"
+#include "movie.h"
+#include "timeslot.h"
 
 void printTime(Time time) {
     std::cout << time.h << ":" << time.m;
