@@ -19,7 +19,9 @@ int main() {
     Time b = {13, 40};
     std::cout << minutesUntil(a, b) << std::endl;
 
-    
+    Time c = {8, 10};
+    printTime(addMinutes(c, 75));
+    std::cout << std::endl;
 
     return 0;
 }

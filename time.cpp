@@ -41,3 +41,18 @@ int minutesUntil(Time earlier, Time later) {
 
     return hoursToMinutes + minutes;
 }
+
+Time addMinutes(Time time0, int min) {
+    Time time;
+    if(time0.m + min >= 60) {
+        if(time0.h + 1 == 24) {
+            time.h = 0;
+        }
+        time.h = time0.h + 1;
+        time.m = (time0.m + min) - 60;
+    }
+    else {
+        time.m = time0.m + min;
+    }
+    return time;
+}
