@@ -14,4 +14,4 @@ main.o: main.cpp time.h
 #	g++ -c tests.cpp -std=c++11
 
 clean:
-	rm -f main.o time.o tests.o
+	rm -f *.o
