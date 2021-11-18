@@ -4,10 +4,12 @@
 #include "timeslot.h"
 
 int main() {
+    std::cout << "***** PART A *****" << std::endl;
     Time now;
     now.h = 17;
     now.m = 45;
     Time t = { 17, 45 };
+    std::cout << minutesSinceMidnight(t) << std::endl;
 
     Time morningLecture = {8, 10};
     Time myAlarm;
@@ -21,10 +23,14 @@ int main() {
     Time b = {13, 40};
     std::cout << minutesUntil(a, b) << std::endl;
 
+    std::cout << std::endl;
+    std::cout << "***** PART B *****" << std::endl;
     Time c = {8, 10};
     printTime(addMinutes(c, 75));
     std::cout << std::endl;
 
+    std::cout << std::endl;
+    std::cout << "***** PART C *****" << std::endl;
     Movie movie1 = {"Back to the Future", COMEDY, 116};
     Movie movie2 = {"Black Panther", ACTION, 134};
     TimeSlot morning = {movie1, {9, 15}};  
@@ -37,6 +43,9 @@ int main() {
     std::cout << std::endl;
     printTimeSlot(evening);
     std::cout << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "***** PART D *****" << std::endl;
 
     return 0;
 }

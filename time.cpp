@@ -10,17 +10,7 @@ void printTime(Time time) {
 }
 
 int minutesSinceMidnight(Time time) {
-    int hoursToMinutes;
-    int minutes;
-    if(time.h > 12) {
-        hoursToMinutes = (12 + (time.h-12)) * 60;
-    }
-    else {
-        hoursToMinutes = (12 - time.h) * 60;
-    }
-    minutes = 60 - time.m;
-
-    return hoursToMinutes + minutes;
+    return (time.h * 60) + time.m;
 }
 
 int minutesUntil(Time earlier, Time later) {
