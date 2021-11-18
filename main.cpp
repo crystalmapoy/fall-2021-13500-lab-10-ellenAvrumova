@@ -44,6 +44,16 @@ int main() {
     printTimeSlot(evening);
     std::cout << std::endl;
 
+    Movie movie3 = {"Heathers", COMEDY, 103};
+    TimeSlot afternoon = {movie3, {13, 30}};
+    Movie movie4 = {"Mean Girls", COMEDY, 97};
+    TimeSlot eveningTime = {movie4, {15, 20}};
+
+    printTimeSlot(afternoon);
+    std::cout << std::endl;
+    printTimeSlot(eveningTime);
+    std::cout << std::endl;
+    
     std::cout << std::endl;
     std::cout << "***** PART D *****" << std::endl;
 
