@@ -25,5 +25,18 @@ int main() {
     printTime(addMinutes(c, 75));
     std::cout << std::endl;
 
+    Movie movie1 = {"Back to the Future", COMEDY, 116};
+    Movie movie2 = {"Black Panther", ACTION, 134};
+    TimeSlot morning = {movie1, {9, 15}};  
+    TimeSlot daytime = {movie2, {12, 15}}; 
+    TimeSlot evening = {movie2, {16, 45}}; 
+
+    printTimeSlot(morning);
+    std::cout << std::endl;
+    printTimeSlot(daytime);
+    std::cout << std::endl;
+    printTimeSlot(evening);
+    std::cout << std::endl;
+
     return 0;
 }

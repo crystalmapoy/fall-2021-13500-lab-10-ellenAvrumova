@@ -9,3 +9,5 @@ public:
     Genre genre;
     int duration;
 };
+
+void printMovie(Movie mv);

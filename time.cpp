@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath> 
+#include <string>
 #include "time.h"
 #include "movie.h"
 #include "timeslot.h"
@@ -47,14 +48,33 @@ int minutesUntil(Time earlier, Time later) {
 Time addMinutes(Time time0, int min) {
     Time time;
     if(time0.m + min >= 60) {
-        if(time0.h + 1 == 24) {
-            time.h = 0;
-        }
-        time.h = time0.h + 1;
-        time.m = (time0.m + min) - 60;
+        time.h = time0.h + ((time0.m + min)/60);
+        time.m = (time0.m + min) % 60;
     }
     else {
         time.m = time0.m + min;
     }
     return time;
+}
+
+void printMovie(Movie mv) {
+    std::string g;
+    switch (mv.genre) {
+        case ACTION   : g = "ACTION"; break;
+        case COMEDY   : g = "COMEDY"; break;
+        case DRAMA    : g = "DRAMA";  break;
+        case ROMANCE  : g = "ROMANCE"; break;
+        case THRILLER : g = "THRILLER"; break;
+    }
+    std::cout << mv.title << " " << g << " (" << mv.duration << " min)";
+}
+
+void printTimeSlot(TimeSlot ts) {
+    printMovie(ts.movie);
+    std::cout << "[Starts at ";
+    printTime(ts.startTime);
+    std::cout << ", ends by ";
+    Time endTime = addMinutes(ts.startTime, ts.movie.duration);
+    printTime(endTime);
+    std::cout << "]";
 }
