@@ -5,12 +5,6 @@
 
 int main() {
     std::cout << "***** PART A *****" << std::endl;
-    Time test;
-    test.h = 8;
-    test.m = 50;
-    std::cout << printTime(addMinutes(test, 15));
-    std::cout << std::endl;
-
     Time now;
     now.h = 17;
     now.m = 45;
