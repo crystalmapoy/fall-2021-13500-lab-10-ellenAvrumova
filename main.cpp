@@ -53,9 +53,14 @@ int main() {
     std::cout << std::endl;
     printTimeSlot(eveningTime);
     std::cout << std::endl;
-    
+
     std::cout << std::endl;
     std::cout << "***** PART D *****" << std::endl;
+    Movie movie5 = {"Back to the Future", COMEDY, 120};
+    Movie movie6 = {"Black Panther", ACTION, 134};
+    TimeSlot oneMovie = {movie5, {14, 10}};
+    TimeSlot after = scheduleAfter(oneMovie, movie6);
+    std::cout << after.startTime.h << ":" << after.startTime.m << std::endl;
 
     return 0;
 }

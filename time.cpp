@@ -68,3 +68,10 @@ void printTimeSlot(TimeSlot ts) {
     printTime(endTime);
     std::cout << "]";
 }
+
+TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie) {
+    TimeSlot after;
+    after.startTime = addMinutes(ts.startTime, ts.movie.duration);
+    after.movie.title = nextMovie.title;
+    return after;
+}
