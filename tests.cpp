@@ -39,3 +39,13 @@ TEST_CASE("TASK B") {
     CHECK(printTime(addMinutes(eightFifty, 15)) == "9:05");
     CHECK(printTime(addMinutes(fourFifteen, 45)) == "5:00");
 }
+
+TEST_CASE("TASK C") {
+    Movie heathers = {"Heathers", COMEDY, 103};
+    TimeSlot afternoon = {heathers, {13, 30}};
+    CHECK(getTimeSlot(afternoon) == "Heathers COMEDY (103 min)[Starts at 13:30, ends by 15:13]");
+
+    Movie venom = {"Venom: Let There Be Carnage", ACTION, 97};
+    TimeSlot evening = {venom, {6, 10}};
+    CHECK(getTimeSlot(evening) == "Venom: Let There Be Carnage ACTION (97 min)[Starts at 6:10, ends by 7:47]");
+}

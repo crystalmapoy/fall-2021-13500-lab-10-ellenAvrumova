@@ -42,25 +42,20 @@ int main() {
     std::cout << "***** PART C *****" << std::endl;
     Movie movie1 = {"Back to the Future", COMEDY, 116};
     Movie movie2 = {"Black Panther", ACTION, 134};
+    Movie movie3 = {"No Time To Die", ACTION, 163};
+    Movie movie4 = {"Mean Girls", COMEDY, 97};
     TimeSlot morning = {movie1, {9, 15}};  
     TimeSlot daytime = {movie2, {12, 15}}; 
-    TimeSlot evening = {movie2, {16, 45}}; 
+    TimeSlot afternoon = {movie3, {14, 10}};
+    TimeSlot evening = {movie4, {16, 45}}; 
 
     std::cout << getTimeSlot(morning);
     std::cout << std::endl;
     std::cout <<  getTimeSlot(daytime);
     std::cout << std::endl;
-    std::cout << getTimeSlot(evening);
-    std::cout << std::endl;
-
-    Movie movie3 = {"Heathers", COMEDY, 103};
-    TimeSlot afternoon = {movie3, {13, 30}};
-    Movie movie4 = {"Mean Girls", COMEDY, 97};
-    TimeSlot eveningTime = {movie4, {15, 20}};
-
     std::cout << getTimeSlot(afternoon);
     std::cout << std::endl;
-    std::cout << getTimeSlot(eveningTime);
+    std::cout << getTimeSlot(evening);
     std::cout << std::endl;
 
     std::cout << std::endl;
