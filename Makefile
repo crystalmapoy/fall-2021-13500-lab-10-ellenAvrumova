@@ -1,3 +1,10 @@
+# Author: Ellen Avrumova
+# Course: CSCI-135
+# Instructor: Tong Yi & Mike Zamansky
+# Assignment: Lab 10 A-E
+# 
+# This is the Makefile file for all parts of Lab10.
+
 main: main.o time.o
 	g++ -o main main.o time.o
 

@@ -1,3 +1,12 @@
+/**
+ * Author: Ellen Avrumova
+ * Course: CSCI-135
+ * Instructor: Tong Yi & Mike Zamansky
+ * Assignment: Lab 10 A-E
+ * 
+ * This is the main file that runs all the functions in time.cpp.
+*/
+
 #include <iostream>
 #include "time.h"
 #include "movie.h"

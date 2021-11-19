@@ -1,3 +1,14 @@
+/**
+ * Author: Ellen Avrumova
+ * Course: CSCI-135
+ * Instructor: Tong Yi & Mike Zamansky
+ * Assignment: Lab 10 A-E
+ * 
+ * This is file contains all the functions of Lab10. It holds the functions
+ * printTime, minutesSinceMidnight, minutesUntil, addMinutes, printMovie,
+ * getTimeSlot, scheduleAftere, and timeOverlap.
+*/
+
 #include <iostream>
 #include <cmath> 
 #include <string>
