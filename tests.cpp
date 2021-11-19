@@ -68,3 +68,17 @@ TEST_CASE("TASK D") {
     CHECK(schedule2.startTime.m == 58);
 	CHECK(getTimeSlot(schedule2) == "Black Panther ACTION (134 min)[Starts at 17:58, ends by 20:12]");
 }
+
+TEST_CASE("TASK E") {
+    Movie meanGirls = {"Mean Girls", COMEDY, 97};
+    TimeSlot first = {meanGirls, {11, 20}};
+    Movie blackPanther = {"Black Panther", ACTION, 90};
+    TimeSlot second = {blackPanther, {12, 10}};
+    CHECK(timeOverlap(first, second) == true);
+
+    Movie noTime = {"No Time To Die", ACTION, 163};
+    TimeSlot third = {noTime, {15, 50}};
+    Movie heathers = {"Heathers", COMEDY, 103};
+    TimeSlot fourth = {heathers, {8, 40}};
+    CHECK(timeOverlap(third, fourth) == false);
+}
