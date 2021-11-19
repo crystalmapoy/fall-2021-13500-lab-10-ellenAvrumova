@@ -10,6 +10,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include <iostream>
+#include <string>
 #include "time.h"
 #include "timeslot.h"
 #include "movie.h"
@@ -48,4 +49,22 @@ TEST_CASE("TASK C") {
     Movie venom = {"Venom: Let There Be Carnage", ACTION, 97};
     TimeSlot evening = {venom, {6, 10}};
     CHECK(getTimeSlot(evening) == "Venom: Let There Be Carnage ACTION (97 min)[Starts at 6:10, ends by 7:47]");
+}
+
+TEST_CASE("TASK D") {
+    Movie venom = {"Venom: Let There Be Carnage", ACTION, 97};
+	Movie heathers = {"Heathers", COMEDY, 103};
+	TimeSlot ts = {heathers, {9, 25}};	
+	TimeSlot schedule = scheduleAfter(ts, venom);
+    CHECK(schedule.startTime.h == 11);
+    CHECK(schedule.startTime.m == 8);
+	CHECK(getTimeSlot(schedule) == "Venom: Let There Be Carnage ACTION (97 min)[Starts at 11:08, ends by 12:45]");	
+    
+    Movie blackPanther = {"Black Panther", ACTION, 134};
+    Movie noTime = {"No Time To Die", ACTION, 163};
+    TimeSlot ts2 = {noTime, {15, 15}};
+    TimeSlot schedule2 = scheduleAfter(ts2, blackPanther);
+    CHECK(schedule2.startTime.h == 17);
+    CHECK(schedule2.startTime.m == 58);
+	CHECK(getTimeSlot(schedule2) == "Black Panther ACTION (134 min)[Starts at 17:58, ends by 20:12]");
 }

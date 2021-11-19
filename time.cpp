@@ -67,6 +67,8 @@ TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie) {
     TimeSlot after;
     after.startTime = addMinutes(ts.startTime, ts.movie.duration);
     after.movie.title = nextMovie.title;
+    after.movie.duration = nextMovie.duration;
+    after.movie.genre = nextMovie.genre;
     return after;
 }
 

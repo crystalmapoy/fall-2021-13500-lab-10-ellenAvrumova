@@ -65,7 +65,8 @@ int main() {
     TimeSlot oneMovie = {movie5, {14, 10}};
     TimeSlot after = scheduleAfter(oneMovie, movie6);
     std::cout << after.startTime.h << ":" << after.startTime.m << std::endl;
-
+    std::cout << getTimeSlot(after) << std::endl;
+    
     std::cout << std::endl;
     std::cout << "***** PART E *****" << std::endl;
     Movie movie7 = {"Back to the Future", COMEDY, 90};
