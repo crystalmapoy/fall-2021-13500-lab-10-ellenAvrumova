@@ -10,4 +10,4 @@ public:
     int duration;
 };
 
-void printMovie(Movie mv);
+std::string printMovie(Movie mv);

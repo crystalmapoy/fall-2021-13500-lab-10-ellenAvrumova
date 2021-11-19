@@ -5,12 +5,12 @@
 #include "movie.h"
 #include "timeslot.h"
 
-void printTime(Time time) {
+std::string printTime(Time time) {
     if(time.m < 10) {
-        std::cout << time.h << ":0" << time.m;
+        return std::to_string(time.h) + ":0" + std::to_string(time.m);
     }
     else {
-        std::cout << time.h << ":" << time.m;
+        return std::to_string(time.h) + ":" + std::to_string(time.m);
     }
 }
 
@@ -19,7 +19,7 @@ int minutesSinceMidnight(Time time) {
 }
 
 int minutesUntil(Time earlier, Time later) {
-    return minutesSinceMidnight(earlier) - minutesSinceMidnight(later);
+    return minutesSinceMidnight(later) - minutesSinceMidnight(earlier);
 }
 
 Time addMinutes(Time time0, int min) {
@@ -34,7 +34,7 @@ Time addMinutes(Time time0, int min) {
     return time;
 }
 
-void printMovie(Movie mv) {
+std::string printMovie(Movie mv) {
     std::string g;
     switch (mv.genre) {
         case ACTION   : g = "ACTION"; break;
@@ -43,17 +43,13 @@ void printMovie(Movie mv) {
         case ROMANCE  : g = "ROMANCE"; break;
         case THRILLER : g = "THRILLER"; break;
     }
-    std::cout << mv.title << " " << g << " (" << mv.duration << " min)";
+    return mv.title + " " + g + " (" + std::to_string(mv.duration) + " min)";
 }
 
-void printTimeSlot(TimeSlot ts) {
-    printMovie(ts.movie);
-    std::cout << "[Starts at ";
-    printTime(ts.startTime);
-    std::cout << ", ends by ";
-    Time endTime = addMinutes(ts.startTime, ts.movie.duration);
-    printTime(endTime);
-    std::cout << "]";
+std::string getTimeSlot(TimeSlot ts) {
+    std::string movie = printMovie(ts.movie);
+    std::string time = "[Starts at " + printTime(ts.startTime) + ", ends by " + printTime(addMinutes(ts.startTime, ts.movie.duration)) + "]";
+    return movie + time;
 }
 
 TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie) {

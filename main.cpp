@@ -8,7 +8,7 @@ int main() {
     Time test;
     test.h = 8;
     test.m = 50;
-    printTime(addMinutes(test, 15));
+    std::cout << printTime(addMinutes(test, 15));
     std::cout << std::endl;
 
     Time now;
@@ -20,9 +20,9 @@ int main() {
     Time morningLecture = {8, 10};
     Time myAlarm;
     myAlarm = morningLecture;
-    printTime(morningLecture);
+    std::cout << printTime(morningLecture);
     std::cout << std::endl;
-    printTime(myAlarm);
+    std::cout << printTime(myAlarm);
     std::cout << std::endl;
 
     Time a = {10, 30};
@@ -32,7 +32,7 @@ int main() {
     std::cout << std::endl;
     std::cout << "***** PART B *****" << std::endl;
     Time c = {8, 10};
-    printTime(addMinutes(c, 75));
+    std::cout << printTime(addMinutes(c, 75));
     std::cout << std::endl;
 
     std::cout << std::endl;
@@ -43,11 +43,11 @@ int main() {
     TimeSlot daytime = {movie2, {12, 15}}; 
     TimeSlot evening = {movie2, {16, 45}}; 
 
-    printTimeSlot(morning);
+    std::cout << getTimeSlot(morning);
     std::cout << std::endl;
-    printTimeSlot(daytime);
+    std::cout <<  getTimeSlot(daytime);
     std::cout << std::endl;
-    printTimeSlot(evening);
+    std::cout << getTimeSlot(evening);
     std::cout << std::endl;
 
     Movie movie3 = {"Heathers", COMEDY, 103};
@@ -55,9 +55,9 @@ int main() {
     Movie movie4 = {"Mean Girls", COMEDY, 97};
     TimeSlot eveningTime = {movie4, {15, 20}};
 
-    printTimeSlot(afternoon);
+    std::cout << getTimeSlot(afternoon);
     std::cout << std::endl;
-    printTimeSlot(eveningTime);
+    std::cout << getTimeSlot(eveningTime);
     std::cout << std::endl;
 
     std::cout << std::endl;

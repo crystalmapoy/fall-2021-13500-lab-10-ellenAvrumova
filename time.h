@@ -6,7 +6,7 @@ public:
     int m;
 };
 
-void printTime(Time time);
+std::string printTime(Time time);
 int minutesSinceMidnight(Time time);
 int minutesUntil(Time earlier, Time later);
 Time addMinutes(Time time0, int min);
