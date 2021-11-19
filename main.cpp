@@ -5,6 +5,12 @@
 
 int main() {
     std::cout << "***** PART A *****" << std::endl;
+    Time test;
+    test.h = 8;
+    test.m = 50;
+    printTime(addMinutes(test, 15));
+    std::cout << std::endl;
+
     Time now;
     now.h = 17;
     now.m = 45;
@@ -61,6 +67,16 @@ int main() {
     TimeSlot oneMovie = {movie5, {14, 10}};
     TimeSlot after = scheduleAfter(oneMovie, movie6);
     std::cout << after.startTime.h << ":" << after.startTime.m << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "***** PART E *****" << std::endl;
+    Movie movie7 = {"Back to the Future", COMEDY, 90};
+    TimeSlot first = {movie7, {10, 00}};
+    Movie movie8 = {"Black Panther", ACTION, 90};
+    TimeSlot second = {movie8, {11, 30}};
+    std::cout << timeOverlap(first, second) << std::endl;
+    TimeSlot third = {movie8, {11, 29}};
+    std::cout << timeOverlap(first, third) << std::endl;
 
     return 0;
 }

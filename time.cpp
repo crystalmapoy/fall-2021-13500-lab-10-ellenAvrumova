@@ -6,7 +6,12 @@
 #include "timeslot.h"
 
 void printTime(Time time) {
-    std::cout << time.h << ":" << time.m;
+    if(time.m < 10) {
+        std::cout << time.h << ":0" << time.m;
+    }
+    else {
+        std::cout << time.h << ":" << time.m;
+    }
 }
 
 int minutesSinceMidnight(Time time) {
@@ -14,25 +19,7 @@ int minutesSinceMidnight(Time time) {
 }
 
 int minutesUntil(Time earlier, Time later) {
-    int hoursToMinutes;
-    int minutes;
-    if(earlier.h > 12 && later.h < 10) {
-        hoursToMinutes = (12 - earlier.h - later.h) * 60;
-    }
-    else if(earlier.h > later.h) {
-        hoursToMinutes = 12 - (earlier.h - later.h);
-    }
-    else {
-        hoursToMinutes = (later.h - earlier.h) * 60;
-    }
-    if(earlier.m < later.m) {
-        minutes = later.m - earlier.m;
-    }
-    else {
-        minutes = (earlier.m - later.m);
-    }
-
-    return hoursToMinutes + minutes;
+    return minutesSinceMidnight(earlier) - minutesSinceMidnight(later);
 }
 
 Time addMinutes(Time time0, int min) {
@@ -74,4 +61,15 @@ TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie) {
     after.startTime = addMinutes(ts.startTime, ts.movie.duration);
     after.movie.title = nextMovie.title;
     return after;
+}
+
+bool timeOverlap(TimeSlot ts1, TimeSlot ts2) {
+    std::cout.setf(std::ios::boolalpha);
+    if(minutesSinceMidnight(ts2.startTime) > minutesSinceMidnight(ts1.startTime) &&  minutesSinceMidnight(ts2.startTime) < (minutesSinceMidnight(addMinutes(ts1.startTime, ts1.movie.duration)))) {
+        return true;
+    }
+    else if (minutesSinceMidnight(ts1.startTime) > minutesSinceMidnight(ts2.startTime) &&  minutesSinceMidnight(ts1.startTime) < (minutesSinceMidnight(addMinutes(ts2.startTime, ts2.movie.duration)))) {
+        return true;
+    }
+    return false;
 }
